@@ -4,6 +4,8 @@
 - `dotnet add package LineNotifyLogger`
 - setup NotifyLogger in Program.cs file
   ```
+  using LineNotifyLogger;
+  ...
   Host.CreateDefaultBuilder(args)
       .ConfigureWebHostDefaults(webBuilder =>
       {
