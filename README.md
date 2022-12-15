@@ -10,20 +10,14 @@
       .ConfigureWebHostDefaults(webBuilder =>
       {
           webBuilder.UseStartup<Startup>();
-      })
-      .ConfigureLogging((host, logging) =>
-      {
-          logging.AddNotifyLogger(opt =>
-          {
-              host.Configuration.GetSection("Logging").GetSection("Notify").GetSection("Options").Bind(opt);
-          });
-      });
+      }).LineNotify();
   ```
 - add config in appsetting.json file
   ```
     "Logging": {
       "Notify": {
           "Options": {
+              "serviceName": "your service name",
               "token": "your token"
           }
       }
